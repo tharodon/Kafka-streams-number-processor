@@ -30,7 +30,7 @@ public class NumberProcessor {
     public void buildPipeLine(StreamsBuilder builder) {
         KStream<String, String> numberStream = builder.stream(topic);
         numberStream
-                .peek((key, value) -> log.info("starting process... {}", value))
+                .peek((key, value) -> log.info("start processing... {}", value))
                 .groupBy((key, value) -> "")
                 .windowedBy(TimeWindows.ofSizeWithNoGrace(Duration.ofMinutes(minutes)))
                 .aggregate(
