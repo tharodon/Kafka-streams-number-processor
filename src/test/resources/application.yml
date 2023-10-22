@@ -1,0 +1,33 @@
+spring:
+  kafka:
+    streams:
+      grouping-time:
+        min: 120
+      application-id: "number-processor"
+      bootstrap-servers: "localhost:29092"
+      properties:
+        default:
+          key:
+            serde:
+              "org.apache.kafka.common.serialization.Serdes$StringSerde"
+          value:
+            serde:
+              "org.apache.kafka.common.serialization.Serdes$StringSerde"
+        num:
+          stream:
+            threads: 1
+        commit:
+          interval:
+            ms: 1000
+    producer:
+      topic: "random-number"
+      bootstrap-servers: "localhost:29092"
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+      value-serializer: "org.apache.kafka.common.serialization.StringSerializer"
+
+logging:
+  level:
+    org:
+      apache:
+        kafka:
+          streams: info
