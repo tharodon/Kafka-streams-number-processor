@@ -1,4 +1,4 @@
-package ru.home.numberprocessor;
+package ru.home.numberprocessor.service;
 
 import lombok.Getter;
 

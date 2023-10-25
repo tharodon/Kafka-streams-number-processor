@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serializer;
-import ru.home.numberprocessor.StateNumber;
+import ru.home.numberprocessor.service.StateNumber;
 
 import java.io.IOException;
 

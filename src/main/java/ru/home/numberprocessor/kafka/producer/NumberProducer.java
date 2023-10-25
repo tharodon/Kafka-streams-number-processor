@@ -21,7 +21,7 @@ public class NumberProducer {
     private String topic;
     private final KafkaTemplate<String, String> template;
 
-    @Scheduled(fixedDelay = 1000)
+    @Scheduled(fixedDelay = 5 * 1000)
     public void sendRandomNumbers() {
         int randomNumber = ThreadLocalRandom.current().nextInt(1, 100);
         send(randomNumber);
